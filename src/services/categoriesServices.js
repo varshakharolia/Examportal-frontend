@@ -5,7 +5,7 @@ const fetchCategories = async (token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.get("https://examination-system-backend-production.up.railway.app/api/category/", config);
+    const { data } = await axios.get("https://examportal-backend-production-67bd.up.railway.app/api/category/", config);
     console.log("categoryService:fetchCategories() Success: ", data);
     return data;
   } catch (error) {
@@ -22,7 +22,7 @@ const addCategory = async (category, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.post("https://examination-system-backend-production.up.railway.app/api/category/", category, config);
+    const { data } = await axios.post("https://examportal-backend-production-67bd.up.railway.app/api/category/", category, config);
     console.log("categoryService:addCategory() Success: ", data);
     return { data: data, isAdded: true, error: null };
   } catch (error) {
@@ -39,7 +39,7 @@ const deleteCategory = async (catId, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.delete(`https://examination-system-backend-production.up.railway.app/api/category/${catId}/`, config);
+    const { data } = await axios.delete(`https://examportal-backend-production-67bd.up.railway.app/api/category/${catId}/`, config);
     console.log("categoryService:deleteCategory()  Success: ", data);
     return {
       isDeleted: true,
@@ -63,7 +63,7 @@ const updateCategory = async (category, token) => {
       headers: { Authorization: `Bearer ${token}` },
     };
     const { data } = await axios.put(
-      `https://examination-system-backend-production.up.railway.app/api/category/${category.catId}/`,
+      `https://examportal-backend-production-67bd.up.railway.app/api/category/${category.catId}/`,
       category,
       config
     );

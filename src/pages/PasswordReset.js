@@ -19,7 +19,7 @@ const PasswordReset = () => {
     setMessage('');
     
     try {
-      const response = await axios.post('https://examination-system-backend-production.up.railway.app/api/send-reset-code', { email });
+      const response = await axios.post('https://examportal-backend-production-67bd.up.railway.app/api/send-reset-code', { email });
       setMessage('Reset code sent to your email.');
       setStep('resetPassword');   // Move to the next step
     } catch (error) {
@@ -38,7 +38,7 @@ const PasswordReset = () => {
     setMessage('');
     
     try {
-      const response = await axios.post('https://examination-system-backend-production.up.railway.app/api/reset-password', {
+      const response = await axios.post('https://examportal-backend-production-67bd.up.railway.app/api/reset-password', {
         email,
         code,
         newPassword,

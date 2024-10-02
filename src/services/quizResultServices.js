@@ -6,7 +6,7 @@ const submitQuiz = async (userId, quizId, answers, token) => {
       headers: { Authorization: `Bearer ${token}` },
     };
     const { data } = await axios.post(
-      `https://examination-system-backend-production.up.railway.app/api/quizResult/submit/?userId=${userId}&quizId=${quizId}`,
+      `https://examportal-backend-production-67bd.up.railway.app/api/quizResult/submit/?userId=${userId}&quizId=${quizId}`,
       answers,
       config
     );
@@ -29,13 +29,13 @@ const fetchQuizResult = async (userId, token) => {
     let data = null;
     if (userId) {
       data = await axios.get(
-        `https://examination-system-backend-production.up.railway.app/api/quizResult/?userId=${userId}`,
+        `https://examportal-backend-production-67bd.up.railway.app/api/quizResult/?userId=${userId}`,
         config
       );
     }
     else {
       data = await axios.get(
-        `https://examination-system-backend-production.up.railway.app/api/quizResult/all`,
+        `https://examportal-backend-production-67bd.up.railway.app/api/quizResult/all`,
         config
       );
     }

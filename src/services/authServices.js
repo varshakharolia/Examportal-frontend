@@ -2,7 +2,7 @@ import axios from "axios";
 
 const register = async (user) => {
   try {
-    const { data } = await axios.post("https://examination-system-backend-production.up.railway.app/api/register", user);
+    const { data } = await axios.post("https://examportal-backend-production-67bd.up.railway.app/api/register", user);
     
     if (data && data.userId) {
       console.log("authService:register() Success: ", user.username, " successfully registered.");
@@ -47,7 +47,7 @@ const register = async (user) => {
 
 const login = async (usernameOrEmail, password) => {
   try {
-    const { data } = await axios.post("https://examination-system-backend-production.up.railway.app/api/login", {
+    const { data } = await axios.post("https://examportal-backend-production-67bd.up.railway.app/api/login", {
       username: usernameOrEmail,
       password,
     });

@@ -6,7 +6,7 @@ const fetchQuestionsByQuiz = async (quizId, token) => {
       headers: { Authorization: `Bearer ${token}` },
     };
     const { data } = await axios.get(
-      `https://examination-system-backend-production.up.railway.app/api/question/?quizId=${quizId}`,
+      `https://examportal-backend-production-67bd.up.railway.app/api/question/?quizId=${quizId}`,
       config
     );
     console.log("questionsServices:fetchQuestionsByQuiz() Success: ", data);
@@ -26,7 +26,7 @@ const addQuestion = async (question, token) => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    const { data } = await axios.post("https://examination-system-backend-production.up.railway.app/api/question/", question, config);
+    const { data } = await axios.post("https://examportal-backend-production-67bd.up.railway.app/api/question/", question, config);
     console.log("questionsServices:addQuestion()  Success: ", data);
     return { data: data, isAdded: true, error: null };
   } catch (error) {
@@ -43,7 +43,7 @@ const deleteQuestion = async (quesId, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.delete(`https://examination-system-backend-production.up.railway.app/api/question/${quesId}`, config);
+    const { data } = await axios.delete(`https://examportal-backend-production-67bd.up.railway.app/api/question/${quesId}`, config);
     console.log("questionsServices:deleteQuestion() Success: ", data);
     return {
       isDeleted: true,

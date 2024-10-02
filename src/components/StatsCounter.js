@@ -24,7 +24,7 @@ const StatsCounter = ({ position = 'bottom' }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://examination-system-backend-production.up.railway.app/api/statistics/total');
+        const response = await axios.get('https://examportal-backend-production-67bd.up.railway.app/api/statistics/total');
         setFinalCounts(response.data);
       } catch (error) {
         console.error('Error fetching statistics:', error);

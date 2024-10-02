@@ -8,10 +8,10 @@ const fetchQuizzes = async (token, catId) => {
 
     let quizzes = null;
     if (catId === null) {
-      const { data } = await axios.get("https://examination-system-backend-production.up.railway.app/api/quiz/", config);
+      const { data } = await axios.get("https://examportal-backend-production-67bd.up.railway.app/api/quiz/", config);
       quizzes = data;
     } else {
-      const { data } = await axios.get(`https://examination-system-backend-production.up.railway.app/api/quiz/?catId=${catId}`, config);
+      const { data } = await axios.get(`https://examportal-backend-production-67bd.up.railway.app/api/quiz/?catId=${catId}`, config);
       quizzes = data;
     }
     console.log("quizzesServices:fetchQuizzes() Success: ", quizzes);
@@ -30,7 +30,7 @@ const addQuiz = async (quiz, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.post("https://examination-system-backend-production.up.railway.app/api/quiz/", quiz, config);
+    const { data } = await axios.post("https://examportal-backend-production-67bd.up.railway.app/api/quiz/", quiz, config);
     console.log("quizzesServices:addQuiz()  Success: ", data);
     return { data: data, isAdded: true, error: null };
   } catch (error) {
@@ -47,7 +47,7 @@ const deleteQuiz = async (quizId, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.delete(`https://examination-system-backend-production.up.railway.app/api/quiz/${quizId}/`, config);
+    const { data } = await axios.delete(`https://examportal-backend-production-67bd.up.railway.app/api/quiz/${quizId}/`, config);
     console.log("quizzesServices:deleteQuiz()  Success: ", data);
     return {
       isDeleted: true,
@@ -71,7 +71,7 @@ const updateQuiz = async (quiz, token) => {
     const config = {
       headers: { Authorization: `Bearer ${token}` },
     };
-    const { data } = await axios.put(`https://examination-system-backend-production.up.railway.app/api/quiz/${quiz.quizId}/`, quiz, config);
+    const { data } = await axios.put(`https://examportal-backend-production-67bd.up.railway.app/api/quiz/${quiz.quizId}/`, quiz, config);
     console.log("quizzesServices:updateQuiz()  Success: ", data);
     return {
       data: data,

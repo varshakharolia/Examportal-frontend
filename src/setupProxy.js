@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "https://examination-system-backend-production.up.railway.app",
+      target: "https://examportal-backend-production-67bd.up.railway.app",
       changeOrigin: true,
       onProxyReq: (proxyReq, req, res) => {
         console.log(`Proxying ${req.method} request to: ${proxyReq.href}`);
